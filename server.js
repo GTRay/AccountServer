@@ -1,5 +1,5 @@
 var express = require("express");
-var login = require('./routes/lgoinroutes');
+var login = require('./routes/loginroutes');
 var bodyParser=require('body-parser');
 
 var app=express();

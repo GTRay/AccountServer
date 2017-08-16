@@ -1,8 +1,8 @@
 var express = require("express");
 var login = require('./routes/loginroutes');
-var bodyParser=require('body-parser');
+var bodyParser = require('body-parser');
 
-var app=express();
+var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -15,13 +15,17 @@ var router = express.Router();
 
 // test route
 router.get('/', function(req, res) {
-  res.json({message: 'welcome to our upload module apis'});
+  res.json({ message: 'welcome to our upload module apis' });
 });
 
 // route to handle user registration
 // api for register
-router.post('/register', login.register);
+router.post('/register', function(req, res) {
+  login.register
+});
 // api for login
-router.post('/login', login.login);
+router.post('/login', function(req, res) {
+  login.login
+});
 app.use('/api', router);
 app.listen(5000);
